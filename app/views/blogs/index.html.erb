@@ -5,6 +5,7 @@
 <div id="blogs">
   <% @blogs.each do |blog| %>
     <%= render blog %>
+    <%= link_to blog.status, toggle_status_blog_path(blog) %>
     <p>
       <%= link_to "Show this blog", blog %>
     </p>

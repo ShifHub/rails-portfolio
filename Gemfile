@@ -6,6 +6,9 @@ ruby "3.1.2"
 #Authentication, https://rubydoc.info/github/heartcombo/devise
 gem 'devise', '~> 4.9'
 
+#pretty URL’s, github: https://github.com/norman/friendly_id
+gem 'friendly_id', '~> 5.4.0'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4"
 

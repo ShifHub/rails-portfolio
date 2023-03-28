@@ -6,11 +6,22 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <% if current_user %>
+    <%= link_to "logout", destroy_user_session_path, method: :delete %>
+    <% else %>
+    <%= link_to "register", new_user_registration_path %>
+    <br>
+    <%= link_to "login", new_user_session_path %>
+    <% end%>
+
     <%= yield %>
   </body>
 </html>

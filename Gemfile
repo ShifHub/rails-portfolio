@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.2"
 
+#Authentication, https://rubydoc.info/github/heartcombo/devise
+gem 'devise', '~> 4.9'
+
 #pretty URL’s, github: https://github.com/norman/friendly_id
 gem 'friendly_id', '~> 5.4.0'
 

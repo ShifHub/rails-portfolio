@@ -8,7 +8,7 @@ class PortfoliosController < ApplicationController
     end
 
     def show
-        @portfolio_item = get_portfolio_item
+        @portfolio_item = get_portfolio
     end
 
     def new
@@ -17,7 +17,7 @@ class PortfoliosController < ApplicationController
     end
 
     def create
-        @portfolio_item = Portfolio.new(portfolio_item_params)
+        @portfolio_item = Portfolio.new(portfolio_params)
 
         respond_to do |format|
             if @portfolio_item.save
@@ -29,12 +29,12 @@ class PortfoliosController < ApplicationController
     end
 
     def edit
-        @portfolio_item = get_portfolio_item
+        @portfolio_item = get_portfolio
     end
 
     def destroy
         #lookup
-        @portfolio_item = get_portfolio_item
+        @portfolio_item = get_portfolio
         #destroy
         @portfolio_item.destroy
         #redirect
@@ -44,10 +44,10 @@ class PortfoliosController < ApplicationController
     end
 
     def update
-        @portfolio_item = get_portfolio_item
+        @portfolio_item = get_portfolio
 
         respond_to do |format|
-            if @portfolio_item.update(portfolio_item_params)
+            if @portfolio_item.update(portfolio_params)
                 format.html { redirect_to portfolios_path, notice: "The record was successfully updated." }
             else
                 format.html { render :edit, status: :unprocessable_entity }
@@ -57,11 +57,13 @@ class PortfoliosController < ApplicationController
 
     private
 
-    def get_portfolio_item
+    def get_portfolio
         Portfolio.find(params[:id])
     end
     
-    def portfolio_item_params
-        params.require(:portfolio).permit(:title, :subtitle, :body, technologies_attributes: [:name])
+    def portfolio_params
+        params.require(:portfolio).permit(:title, 
+                                          :subtitle, 
+                                          :body, technologies_attributes: [:name])
     end
 end

@@ -8,7 +8,7 @@ class PortfoliosController < ApplicationController
     end
 
     def show
-        @portfolio_item = Portfolio.find(params[:id])
+        @portfolio_item = get_portfolio_item
     end
 
     def new
@@ -29,12 +29,12 @@ class PortfoliosController < ApplicationController
     end
 
     def edit
-        @portfolio_item = Portfolio.find(params[:id])
+        @portfolio_item = get_portfolio_item
     end
 
     def destroy
         #lookup
-        @portfolio_item = Portfolio.find(params[:id])
+        @portfolio_item = get_portfolio_item
         #destroy
         @portfolio_item.destroy
         #redirect
@@ -44,7 +44,7 @@ class PortfoliosController < ApplicationController
     end
 
     def update
-        @portfolio_item = Portfolio.find(params[:id])
+        @portfolio_item = get_portfolio_item
 
         respond_to do |format|
             if @portfolio_item.update(portfolio_item_params)
@@ -56,6 +56,10 @@ class PortfoliosController < ApplicationController
     end
 
     private
+
+    def get_portfolio_item
+        Portfolio.find(params[:id])
+    end
     
     def portfolio_item_params
         params.require(:portfolio).permit(:title, :subtitle, :body, technologies_attributes: [:name])

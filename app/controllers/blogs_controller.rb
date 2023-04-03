@@ -56,7 +56,6 @@ class BlogsController < ApplicationController
   end
 
   def toggle_status
-    
     if @blog.published?
       @blog.draft!
     elsif @blog.draft?

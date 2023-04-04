@@ -3,7 +3,7 @@
     <strong>Title:</strong>
     <%= blog.title %>
   </p>
-
+  <td> Published <%= distance_of_time_in_words(blog.created_at, Time.now)%> ago </td>
   <p>
     <strong>Body:</strong>
     <%= blog.body %>
@@ -11,6 +11,5 @@
 
   <%= link_to blog.status.capitalize, toggle_status_blog_path(blog) %>
   <%= link_to "Show", blog %>
-  <%= link_to "New Blog", new_blog_path %>
   <%= link_to "Delete", blog, method: :delete, data: {confirm: "Are you sure you want to delete?" } %>
 </div>

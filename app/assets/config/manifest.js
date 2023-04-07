@@ -3,3 +3,6 @@
 //= link_tree ../../javascript .js
 //= link_tree ../../../vendor/javascript .js
 //= require rails-ujs
+//= require jquery3
+//= require popper
+//= require bootstrap-sprockets

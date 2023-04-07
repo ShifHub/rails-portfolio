@@ -5,6 +5,9 @@
 <div id="blogs">
   <% @blogs.each do |blog| %>
     <%= render blog %>
+    <%= link_to "Show", blog %>
+    <%= link_to "Delete", blog, method: :delete, data: {confirm: "Are you sure you want to delete?" } %>
+    <%= link_to blog.status.capitalize, toggle_status_blog_path(blog) %>
   <% end %>
 </div>
 <br>

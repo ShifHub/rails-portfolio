@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.2"
 
+gem 'sshif_view_tool', git: 'https://github.com/ShifHub/sshif_view_tool';
 
 # Ruby Library for Building Responsive Web Applications https://github.com/twbs/bootstrap-rubygem
 gem 'bootstrap', '~> 5.2.2'

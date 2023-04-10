@@ -14,4 +14,8 @@ module ApplicationHelper
             content_tag(:p, greeting, class: "source-greeting")
         end
     end
+
+    def copyright_generator
+        SshifViewTool::Renderer.copyright 'Sarrick Shiflett', ' All rights reserved'
+    end
 end

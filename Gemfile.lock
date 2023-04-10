@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/ShifHub/sshif_view_tool
+  revision: 9fe197ef77b145789dbd1713d65d06d23bee5868
+  specs:
+    sshif_view_tool (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -236,6 +242,7 @@ DEPENDENCIES
   puma (~> 5.0)
   rails (~> 7.0.4)
   sprockets-rails
+  sshif_view_tool!
   stimulus-rails
   turbo-rails
   tzinfo-data

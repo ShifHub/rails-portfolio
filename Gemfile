@@ -3,10 +3,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.2"
 
-#My personal gem that allows easy generation of copyright messages
+# My personal gem that  allows easy generation of copyright messages
 gem 'sshif_view_tool', git: 'https://github.com/ShifHub/sshif_view_tool';
 
-#easy to use and read action and content based authorizations. https://github.com/elorest/petergate
+# Masy to use and read action and content based authorizations. https://github.com/elorest/petergate
 gem 'petergate', '~> 3.0'
 
 # Ruby Library for Building Responsive Web Applications https://github.com/twbs/bootstrap-rubygem

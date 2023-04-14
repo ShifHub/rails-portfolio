@@ -1,6 +1,6 @@
 <h1>Angular Portfolio Items</h1>
 
-<%= link_to "Create New Item",  new_portfolio_path %>
+<%= link_to "Create New Item",  new_portfolio_path if logged_in?(:site_admin)%>
 
 <% @angular_portfolio_items.each do |portfolio_item|%>
     <p><%= link_to portfolio_item.title, portfolio_show_path(portfolio_item) %></p>

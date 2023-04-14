@@ -5,11 +5,12 @@
 <div id="blogs">
   <% @blogs.each do |blog| %>
     <%= render blog %>
+    <%= link_to "Edit", blog if logged_in?(:site_admin)%> 
     <%= link_to "Show", blog %>
-    <%= link_to "Delete", blog, method: :delete, data: {confirm: "Are you sure you want to delete?" } %>
-    <%= link_to blog.status.capitalize, toggle_status_blog_path(blog) %>
+    <%= link_to "Delete", blog, method: :delete, data: {confirm: "Are you sure you want to delete?" } if logged_in?(:site_admin) %>
+    <%= link_to blog.status.capitalize, toggle_status_blog_path(blog) if logged_in?(:site_admin)%>
   <% end %>
 </div>
 <br>
 
-<%= link_to "New Blog", new_blog_path %> 
+<%= link_to "New Blog", new_blog_path if logged_in?(:site_admin)%> 

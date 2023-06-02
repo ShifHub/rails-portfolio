@@ -16,18 +16,15 @@
   </head>
 
   <body>
-    <div class="site-wrapper">
-      <div class="site-wrapper-inner">
-        <div class="cover-container">
+    <div class="site-wrapper-inner w-100 h-100">
+      <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
           <%= render "shared/application_nav" %>
 
           <%= yield %>
 
-          <%= render "shared/application_footer" %>
-
           <%= source_helper("application") %>
-        </div>
       </div>
+      <%= render "shared/application_footer" %>
     </div>
   </body>
 </html>

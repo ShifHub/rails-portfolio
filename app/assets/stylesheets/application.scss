@@ -27,28 +27,32 @@ a:hover {
 /*
  * Base structure
  */
- html {
-   min-height: 100%;
-   height: 100%;
- }
+html {
+  min-height: 100%;
+  height: 100%;
+}
 
 body {
   text-align: center;
   display: -ms-flexbox;
-  display: flex;
-  color: #fff;
   text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
   box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
-  background-color: orange;
-  min-height: 100%;
-  min-width: 59rem;
-  z-index: 1;
+
+
+  margin: 0;
+  font-family: var(--bs-body-font-family);
+  font-size: var(--bs-body-font-size);
+  font-weight: var(--bs-body-font-weight);
+  line-height: var(--bs-body-line-height);
+  color: var(--bs-body-color);
+  text-align: var(--bs-body-text-align);
+  background-color: var(--bs-body-bg);
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .cover-container {
-  min-width: 40rem;
-  justify-content: center;
-  max-width: 50rem;
+  max-width: 55rem;
   height: auto;
 }
 
@@ -96,12 +100,25 @@ body {
   }
 }
 
+:root {
+  --bs-breakpoint-xs: 0;
+  --bs-breakpoint-sm: 576px;
+  --bs-breakpoint-md: 768px;
+  --bs-breakpoint-lg: 992px;
+  --bs-breakpoint-xl: 1200px;
+  --bs-breakpoint-xxl: 1400px;
+}
+
+.px-3 {
+  padding-right: 1rem !important;
+  padding-left: 1rem !important;
+}
+
 
 /*
  * Cover
  */
 .cover {
-  padding: 8rem;
   margin: 2rem auto;
   max-width: 55rem;
 }
@@ -118,13 +135,7 @@ body {
 .mastfoot {
   color: rgba(255, 255, 255, .5);
   padding-bottom: 1rem;
-  padding-top: 3rem;
-  background-image: linear-gradient(to bottom, rgba(230,150,1,0), rgba(230, 150, 1, .5), rgba(230, 150, 0, 1), rgba(200, 130, 0, 1));
-  z-index: 2;
-}
-
-.footer-spacing {
-  padding-top: 5rem;
+  padding-top: 1rem;
 }
 
 /*
@@ -183,5 +194,10 @@ custom styles
 }
 
 .card-body {
+  color: black;
+  text-align: left;
+}
+
+.auth-links a {
   color: black;
 }

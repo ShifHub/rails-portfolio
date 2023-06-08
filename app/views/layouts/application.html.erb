@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" class="h-100" data-bs-theme="dark">
   <head> 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,17 +15,15 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <div class="site-wrapper-inner w-100 h-100">
-      <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-          <%= render "shared/application_nav" %>
-          
-          <%= yield %>
+  <body class="d-flex h-100 text-center text-bg-dark">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <%= render "shared/application_nav" %>
+      
+      <main class="px-3"> <%= yield %> </main>
 
-          <%= source_helper("application") %>
+      <%= source_helper("application") %>
 
-          <%= render "shared/application_footer" %>
-      </div>
+      <%= render "shared/application_footer" %>
     </div>
   </body>
 </html>

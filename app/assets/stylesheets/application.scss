@@ -193,9 +193,10 @@ custom styles
   -webkit-overflow-scrolling: touch;
 }
 
-.card-body {
+.card-block {
   color: black;
   text-align: left;
+  padding: 2em
 }
 
 .auth-links a {
@@ -204,4 +205,21 @@ custom styles
 
 .register-text  {
   text-align: right;
+}
+
+.login > .card {
+  width: 22rem;
+  margin: 0 auto;
+  float: none;
+  margin-bottom: 10px
+}
+
+.button-container button {
+  display: inline-block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 100%;
+  text-transform: none;
+  transform: none;
 }

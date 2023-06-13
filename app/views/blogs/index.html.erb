@@ -1,6 +1,19 @@
-<p style="color: green"><%= notice %></p>
+<div class='blog-container justify-content-center' id="blogs">
+  <p style="color: green"><%= notice %></p>
+  <%= render @blogs %>
 
-<!--        Loudly display chosen articles at the top: future use?
+  <nav class="blog-pagination" aria-label="Pagination">
+    <a class="btn btn-outline-primary rounded-pill" href="#">Older</a>
+    <a class="btn btn-outline-secondary rounded-pill disabled">Newer</a>
+  </nav>
+</div>
+<br>
+
+
+
+
+
+<!--     FUTURE USE: Loudly display chosen articles at the top
 <div class="p-4 p-md-5 mb-4 rounded text-bg-dark">
   <div class="col-md-6 px-0">
     <h1 class="display-4 fst-italic"><%= blog_title(0)%></h1>
@@ -40,22 +53,3 @@
   </div>
 </div>
 -->
-<div class='row'>
-  <div class='blog-container offset-md-3 col-md-6 justify-content-center' id="blogs">
-    <% @blogs.each do |blog| %>
-      <%= render blog %>
-      <%= link_to "Edit", blog if logged_in?(:site_admin)%> 
-      <%= link_to "Show", blog %>
-      <%= link_to "Delete", blog, method: :delete, data: {confirm: "Are you sure you want to delete?" } if logged_in?(:site_admin) %>
-      <%= link_to blog.status.capitalize, toggle_status_blog_path(blog) if logged_in?(:site_admin)%>
-      <p class='border-bottom mt-3'></p>
-    <% end %>
-  </div>
-</div>
-<br>
-<nav class="blog-pagination" aria-label="Pagination">
-  <a class="btn btn-outline-primary rounded-pill" href="#">Older</a>
-  <a class="btn btn-outline-secondary rounded-pill disabled">Newer</a>
-</nav>
-
-<%= link_to "New Blog", new_blog_path if logged_in?(:site_admin)%>

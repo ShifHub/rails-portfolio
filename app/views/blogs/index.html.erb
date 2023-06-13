@@ -1,9 +1,8 @@
 <p style="color: green"><%= notice %></p>
 
-<!-- start of content -->
+<!--        Loudly display chosen articles at the top: future use?
 <div class="p-4 p-md-5 mb-4 rounded text-bg-dark">
   <div class="col-md-6 px-0">
-    <!-- TODO:- decide on what you want guests to see first-->
     <h1 class="display-4 fst-italic"><%= blog_title(0)%></h1>
     <p class="lead my-3"><%= blog_debut(0) %></p>
     <p class="lead mb-0"><a href="#" class="text-white fw-bold">Continue reading...</a></p>
@@ -40,17 +39,18 @@
     </div>
   </div>
 </div>
-<!-- end of content -->
-
-<div id="blogs">
-  <% @blogs.each do |blog| %>
-    <%= render blog %>
-    <%= link_to "Edit", blog if logged_in?(:site_admin)%> 
-    <%= link_to "Show", blog %>
-    <%= link_to "Delete", blog, method: :delete, data: {confirm: "Are you sure you want to delete?" } if logged_in?(:site_admin) %>
-    <%= link_to blog.status.capitalize, toggle_status_blog_path(blog) if logged_in?(:site_admin)%>
-    <p class='border-bottom mt-3'></p>
-  <% end %>
+-->
+<div class='row'>
+  <div class='blog-container offset-md-3 col-md-6 justify-content-center' id="blogs">
+    <% @blogs.each do |blog| %>
+      <%= render blog %>
+      <%= link_to "Edit", blog if logged_in?(:site_admin)%> 
+      <%= link_to "Show", blog %>
+      <%= link_to "Delete", blog, method: :delete, data: {confirm: "Are you sure you want to delete?" } if logged_in?(:site_admin) %>
+      <%= link_to blog.status.capitalize, toggle_status_blog_path(blog) if logged_in?(:site_admin)%>
+      <p class='border-bottom mt-3'></p>
+    <% end %>
+  </div>
 </div>
 <br>
 <nav class="blog-pagination" aria-label="Pagination">

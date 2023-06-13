@@ -1,11 +1,5 @@
-<div id="<%= dom_id blog %>">
-  <p>
-    <strong>Title:</strong>
-    <%= blog.title %>
-  </p>
-  <td> Published <%= distance_of_time_in_words(blog.created_at, Time.now)%> ago </td>
-  <p>
-    <strong>Body:</strong>
-    <%= blog.body %>
-  </p>
-</div>
+<article class="blog-post mt-3" id="<%= dom_id blog %>">
+  <h2 class="blog-post-title mb-3"><%= blog.title %></h2>
+  <td> Published <%= distance_of_time_in_words(blog.created_at, Time.now)%> ago by </td> <a href="#"> Author</a>
+  <p><%= blog.body %></p>
+</article>

@@ -1,6 +1,46 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Blogs</h1>
+<!-- start of content -->
+<div class="p-4 p-md-5 mb-4 rounded text-bg-dark">
+  <div class="col-md-6 px-0">
+    <!-- TODO:- decide on what you want guests to see first-->
+    <h1 class="display-4 fst-italic"><%= blog_title(0)%></h1>
+    <p class="lead my-3"><%= blog_debut(0) %></p>
+    <p class="lead mb-0"><a href="#" class="text-white fw-bold">Continue reading...</a></p>
+  </div>
+</div>
+
+<div class="row mb-2">
+  <div class="col-md-6">
+    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+      <div class="col p-4 d-flex flex-column position-static">
+        <strong class="d-inline-block mb-2 text-primary">World</strong>
+        <h3 class="mb-0"><%= blog_title(1) %></h3>
+        <div class="mb-1 text-body-secondary"><%=  blog_date(1) %></div>
+        <p class="card-text mb-auto"><%= blog_debut(1) %></p>
+        <a href="#" class="stretched-link">Continue reading</a>
+      </div>
+      <div class="col-auto d-none d-lg-block">
+        <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+      <div class="col p-4 d-flex flex-column position-static">
+        <strong class="d-inline-block mb-2 text-success">Design</strong>
+        <h3 class="mb-0"><%= blog_title(2) %></h3>
+        <div class="mb-1 text-body-secondary"><%=  blog_date(2) %></div>
+        <p class="card-text mb-auto"><%= blog_debut(2) %></p>
+        <a href="#" class="stretched-link">Continue reading</a>
+      </div>
+      <div class="col-auto d-none d-lg-block">
+        <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end of content -->
 
 <div id="blogs">
   <% @blogs.each do |blog| %>
@@ -9,8 +49,13 @@
     <%= link_to "Show", blog %>
     <%= link_to "Delete", blog, method: :delete, data: {confirm: "Are you sure you want to delete?" } if logged_in?(:site_admin) %>
     <%= link_to blog.status.capitalize, toggle_status_blog_path(blog) if logged_in?(:site_admin)%>
+    <p class='border-bottom mt-3'></p>
   <% end %>
 </div>
 <br>
+<nav class="blog-pagination" aria-label="Pagination">
+  <a class="btn btn-outline-primary rounded-pill" href="#">Older</a>
+  <a class="btn btn-outline-secondary rounded-pill disabled">Newer</a>
+</nav>
 
-<%= link_to "New Blog", new_blog_path if logged_in?(:site_admin)%> 
+<%= link_to "New Blog", new_blog_path if logged_in?(:site_admin)%>

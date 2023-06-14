@@ -1,12 +1,13 @@
+<%= paginate @blogs %>
+
 <div class='blog-container justify-content-center' id="blogs">
+
   <p style="color: green"><%= notice %></p>
   <%= render @blogs %>
 
-  <nav class="blog-pagination" aria-label="Pagination">
-    <a class="btn btn-outline-primary rounded-pill" href="#">Older</a>
-    <a class="btn btn-outline-secondary rounded-pill disabled">Newer</a>
-  </nav>
 </div>
+
+<%= paginate @blogs %>
 
 
 

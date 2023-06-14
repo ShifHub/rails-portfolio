@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.2"
 
+# Scope & Engine based, clean, powerful, agnostic, customizable and sophisticated paginator
+gem 'kaminari', '~> 1.2', '>= 1.2.2'
+
 # My personal gem that  allows easy generation of copyright messages
 gem 'sshif_view_tool', git: 'https://github.com/ShifHub/sshif_view_tool';
 

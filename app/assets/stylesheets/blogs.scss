@@ -1,4 +1,5 @@
 @import 'bootstrap';
+@import "font-awesome";
 
 .blog-header-logo {
     font-family: 'Courgette', cursive;
@@ -95,4 +96,13 @@ h6 {
 
 .blog-container {
     max-width: 55rem;
+}
+
+/*
+ * Custom Styles
+ */
+
+.social-links li {
+    font-size: 1.5em;
+
 }

@@ -6,6 +6,9 @@ ruby "3.1.2"
 # My personal gem that  allows easy generation of copyright messages
 gem 'sshif_view_tool', git: 'https://github.com/ShifHub/sshif_view_tool';
 
+# Font-Awesome web fonts and stylesheets as a Rails engine https://github.com/bokmann/font-awesome-rails
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.8'
+
 # Masy to use and read action and content based authorizations. https://github.com/elorest/petergate
 gem 'petergate', '~> 3.0'
 

@@ -11,8 +11,13 @@
 
     <meta name="keywords" content=<%= @seo_keywords %>/>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    
+    <%= stylesheet_link_tag 'bootstrap/dist/css/bootstrap.min', 'data-turbo-track': 'reload' %>
+
+    <%= javascript_include_tag 'bootstrap/dist/js/bootstrap.bundle.min', 'data-turbo-track': 'reload' %>
+
   </head>
 
   <body class="d-flex h-100 text-center text-bg-dark">

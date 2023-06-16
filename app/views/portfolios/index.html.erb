@@ -1,7 +1,11 @@
-<h1>Portfolio Items</h1>
+<div class="album py-5 bg-body-tertiary">
+      <div class="container">
+        <h1>Portfolio Items</h1>
 
-<%= link_to "Add New Experience",  new_portfolio_path, class: 'btn btn-outline-secondary mb-3' if logged_in?(:site_admin) %>
+        <%= link_to "Add New Experience",  new_portfolio_path, class: 'btn btn-outline-secondary mb-3' if logged_in?(:site_admin) %>
 
-<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-    <%= render partial: 'portfolio_item', collection: @portfolio_items %>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <%= render partial: 'portfolio_item', collection: @portfolio_items %>
+        </div>
+    </div>
 </div>

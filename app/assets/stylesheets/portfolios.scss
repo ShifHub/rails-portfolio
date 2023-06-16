@@ -72,3 +72,31 @@
 .bd-mode-toggle {
     z-index: 1500;
 }
+
+/*
+Nav-Links
+*/
+
+a,
+a:focus,
+a:hover {
+    color: #fff;
+}
+
+.portfolio-nav-block {
+    display: block;
+}
+
+.portfolio-nav-bar .nav-link {
+    padding: .25rem 0;
+    font-weight: 700;
+    color: rgba(255, 255, 255, .5);
+    background-color: transparent;
+    border-bottom: .25rem solid transparent;
+    display: inline-block;
+}
+
+.portfolio-nav-bar .nav-link:hover,
+.portfolio-nav-bar .nav-link:focus {
+    border-bottom-color: rgba(255, 255, 255, .25);
+}

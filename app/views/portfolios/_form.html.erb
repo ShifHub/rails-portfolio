@@ -1,27 +1,35 @@
 <%= form_with(model: @portfolio_item) do |f| %>
-  <div>
-    <%= f.label :title, style: "display: block" %>
-    <%= f.text_field :title %>
-  </div>
+  <div class='row'>
+    <div class='col-md-6'>
+      <div class='p-3'>
+        <%= f.label :title, style: "display: block" %>
+        <%= f.text_field :title, class: 'form-control' %>
+      </div>
 
-  <div>
-    <%= f.label :subtitle, style: "display: block" %>
-    <%= f.text_field :subtitle %>
-  </div>
+      <div class='p-3'>
+        <%= f.label :subtitle, style: "display: block" %>
+        <%= f.text_field :subtitle, class: 'form-control' %>
+      </div>
+    </div>
 
-  <div>
-    <%= f.label :body, style: "display: block" %>
-    <%= f.text_area :body %>
-  </div>
+    <div class='col-md-6'>
+      <div class='p-3'>
+        <%= f.label :body, style: "display: block" %>
+        <%= f.text_area :body, class: 'form-control', rows: 13 %>
+      </div>
+    </div>
 
-  <ul>
+  <hr>
+
+  <h2 class='mt-2'>Technologies Used</h2>
+  <div>
     <%= f.fields_for :technologies do |technology_form| %>
-      <li> 
+      <div class='p-3'> 
       <%= technology_form.label :name %>
-      <%= technology_form.text_field :name %>
-      </li>
+      <%= technology_form.text_field :name, class: 'form-control' %>
+      </div>
     <% end %>
-  </ul>
+  </div>
 
   <div>
     <%= f.submit %>

@@ -5,12 +5,8 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav me-auto mb-2 mb-md-0">
-          <%= link_to "Home", root_path, class: 'nav-link' %>
-          <%= link_to "About Me", about_me_path, class: 'nav-link' %>
-          <%= link_to "Contact", contact_path, class: 'nav-link' %>
-          <%= link_to "Blog", blogs_path, class: 'nav-link disabled' %>
-          <%= link_to "Portfolio", portfolios_path, class: 'nav-link' %>
+      <ul class="navbar-nav blog-nav-bar me-auto mb-2 mb-md-0">
+        <%= nav_helper 'nav-link fw-bold py-1 px-2', 'span' %>
         <%= login_helper 'nav-link'%>
       </ul>
       <form class="d-flex" role="search">

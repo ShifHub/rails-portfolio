@@ -100,3 +100,8 @@ a:hover {
 .portfolio-nav-bar .nav-link:focus {
     border-bottom-color: rgba(255, 255, 255, .25);
 }
+
+.port-nav-list .active {
+    color: #fff;
+    border-bottom-color: #fff;
+}

@@ -105,3 +105,11 @@ a:hover {
     color: #fff;
     border-bottom-color: #fff;
 }
+
+.sortable-ghost {
+    opacity: 0.2;
+}
+
+.portfolio-card {
+    cursor: move;
+}

@@ -3,7 +3,15 @@ class PortfoliosController < ApplicationController
     layout 'portfolio'
     access all: [:show, :index, :angular], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
     def index
-        @portfolio_items = Portfolio.all
+        @portfolio_items = Portfolio.order(:position)
+    end
+
+    def sort 
+        params[:order].each do |key, value|
+            Portfolio.find(value[:id]).update(position: value[:position])
+        end
+
+        head :ok
     end
 
     def angular
@@ -60,6 +68,7 @@ class PortfoliosController < ApplicationController
     def portfolio_params
         params.require(:portfolio).permit(:title, 
                                           :subtitle, 
-                                          :body, technologies_attributes: [:name])
+                                          :body, 
+                                          :position, technologies_attributes: [:name])
     end
 end

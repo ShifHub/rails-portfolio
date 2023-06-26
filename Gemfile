@@ -72,6 +72,29 @@ gem "bootsnap", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
+
+# ---------------- Uploadable photos feature ---------------- #
+# ----------------           Begin           ---------------- #
+
+# Autoload dotenv in Rails.
+# https://github.com/bkeepers/dotenv
+gem 'dotenv-rails', '~> 2.8', '>= 2.8.1'
+
+# Manipulate images with minimal use of memory via ImageMagick / GraphicsMagick
+# https://github.com/minimagick/minimagick
+gem 'mini_magick', '~> 4.12'
+
+# Upload files in your Ruby applications, map them to a range of ORMs, store them on different backends.
+# https://github.com/carrierwaveuploader/carrierwave
+gem 'carrierwave', '~> 2.2', '>= 2.2.4'
+
+# Use aws-sdk for S3 support in CarrierWave
+# https://github.com/carrierwaveuploader/carrierwave-aws
+gem 'carrierwave-aws', '~> 1.5'
+
+# ---------------- Uploadable photos feature ---------------- #
+# ----------------            End            ---------------- #
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]

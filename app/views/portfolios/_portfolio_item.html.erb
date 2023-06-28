@@ -1,6 +1,6 @@
 <div class="col <%= "portfolio-card" if logged_in?(:site_admin) %>" data-id="<%= portfolio_item.id %>">
     <div class="card shadow-sm">
-        <%= image_tag portfolio_item.thumb_image.url unless portfolio_item.thumb_image.nil?%>
+        <%= image_tag portfolio_img(portfolio_item.thumb_image.url, 'thumb'), style: 'max-height: 300px !important;' %>
         <div class="card-body">
             <p><%= link_to portfolio_item.title, portfolio_show_path(portfolio_item) %></p>
             <p><%= portfolio_item.subtitle %></p>

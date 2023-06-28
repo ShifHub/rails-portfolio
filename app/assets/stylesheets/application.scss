@@ -36,7 +36,6 @@ body {
   text-align: center;
   display: -ms-flexbox;
   text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
-  box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
 
 
   margin: 0;
@@ -227,4 +226,21 @@ custom styles
 .app-nav {
   margin-left: 15px;
   margin-right: 15px;
+}
+
+#background {
+  position: fixed;
+  min-width: 100%;
+  min-height: 100%;
+  width: 100% !important;
+  height: 100% !important;
+  top: 0;
+  left: 0;
+  z-index: -100;
+  object-fit: cover;
+  -webkit-transform: translateX(-50%) translateY(-50);
+  transform: translateX(-50%) translateY(-50);
+  background: image-url('home_bg.png') no-repeat;
+  background-size: fill;
+  box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
 }

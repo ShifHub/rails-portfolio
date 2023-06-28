@@ -16,7 +16,18 @@
   </head>
 
   <body class="d-flex h-100 text-center text-bg-dark">
+  
+    <%= video_tag(
+      "HardDrivePhotojpeg.mp4", 
+      id: 'background',
+      autoplay: true,
+      loop: true,
+      muted: true,
+      poster: 'home_bg.png'
+    ) %>
+
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+
       <%= render "shared/application_nav" %>
       
       <main class="px-3"> <%= yield %> </main>

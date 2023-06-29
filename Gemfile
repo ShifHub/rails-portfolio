@@ -72,6 +72,10 @@ gem "bootsnap", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
+# Unobtrusive nested forms handling, using jQuery.
+# https://github.com/nathanvda/cocoon
+gem 'cocoon', '~> 1.2', '>= 1.2.15'
+
 
 # ---------------- Uploadable photos feature ---------------- #
 # ----------------           Begin           ---------------- #

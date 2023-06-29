@@ -36,14 +36,15 @@
   <h2 class='mt-2'>Technologies Used</h2>
   <div>
     <%= f.fields_for :technologies do |technology_form| %>
-      <div class='p-3'> 
-      <%= technology_form.label :name %>
-      <%= technology_form.text_field :name, class: 'form-control' %>
-      </div>
+      <%= render 'technology_fields', f: technology_form %>
     <% end %>
+
+    <div class='px-3'>
+      <%= link_to_add_association 'Add Technology', f, :technologies, class: 'btn btn-primary' %>
+    </div>
   </div>
 
   <div class='mt-5 col-md-3 offset-md-5'>
-    <%= f.submit %>
+    <%= f.submit 'Save', class: 'btn btn-primary' %>
   </div>
 <% end %>

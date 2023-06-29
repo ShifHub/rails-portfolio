@@ -1,0 +1,13 @@
+<div class='p-3 nested-fields'> 
+
+    <%= f.label :name %>
+
+    <div class='row'>
+        <div class='col-md-10'>
+            <%= f.text_field :name, class: 'form-control' %>
+        </div>
+        <div class='col-md-2'>
+            <%= link_to_remove_association "Remove", f, class: 'btn btn-danger' %>
+        </div>
+    </div>
+</div>

@@ -1,12 +1,12 @@
 databases:
-  - name: sarricks-portfolio
-    databaseName: sarricks_portfolio
-    user: sarricks_portfolio
+  - name: sarricks_portfolio
+    databaseName: sarricks_portfolio_fyz3
+    user: sarricks_portfolio_user
     plan: free
 
 services:
   - type: web
-    name: sarricks-portfolio
+    name: sarricks_portfolio
     runtime: ruby
     plan: free
     buildCommand: "./bin/render-build.sh"

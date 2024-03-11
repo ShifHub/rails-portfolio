@@ -82,6 +82,6 @@ test:
 production:
   <<: *default
   url: <%= ENV["DATABASE_URL"] %>
-  database: DevcampPortfolio_production
-  username: DevcampPortfolio
-  password: <%= ENV["DEVCAMPPORTFOLIO_DATABASE_PASSWORD"] %>
+  database: sarricks_portfolio
+  username: sarricks_portfolio_user
+  password: <%= ENV["SARRICKS_PORTFOLIO_DATABASE_PASSWORD"] %>

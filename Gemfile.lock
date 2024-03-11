@@ -139,6 +139,7 @@ GEM
       activerecord (>= 4.0.0)
     globalid (1.0.1)
       activesupport (>= 5.0)
+    gritter (1.2.0)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     image_processing (1.12.2)
@@ -298,6 +299,7 @@ DEPENDENCIES
   dotenv-rails (~> 2.8, >= 2.8.1)
   font-awesome-rails (~> 4.7, >= 4.7.0.8)
   friendly_id (~> 5.4.0)
+  gritter (~> 1.2)
   importmap-rails
   jbuilder
   jquery-rails

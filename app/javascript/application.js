@@ -2,5 +2,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require cocoon
+//= require gritter
 import "@hotwired/turbo-rails"
 import "controllers"

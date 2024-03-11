@@ -76,6 +76,10 @@ gem "bootsnap", require: false
 # https://github.com/nathanvda/cocoon
 gem 'cocoon', '~> 1.2', '>= 1.2.15'
 
+# Growl-like notifications to your application
+# https://github.com/RobinBrouwer/gritter
+gem 'gritter', '~> 1.2'
+
 
 # ---------------- Uploadable photos feature ---------------- #
 # ----------------           Begin           ---------------- #

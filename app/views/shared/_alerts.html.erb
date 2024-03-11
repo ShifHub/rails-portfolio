@@ -1,0 +1,7 @@
+<% if flash[:alert] %>
+    <%= js add_gritter(flash[:alert], title: "Sarrick's Portfolio") %>
+<% elsif flash[:error] %>
+    <%= js add_gritter(flash[:error], title: "Sarrick's Portfolio") %>
+<% elsif flash[:notice] %>
+    <%= js add_gritter(flash[:notice], title: "Sarrick's Portfolio") %>
+<% end %>

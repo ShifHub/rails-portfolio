@@ -46,7 +46,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_19_001049) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "position"
-    t.integer "row_order"
   end
 
   create_table "skills", force: :cascade do |t|

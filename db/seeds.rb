@@ -55,6 +55,7 @@ puts "3 technologies created"
 
 
 @user = User.create!(:email => ENV['ADMIN_EMAIL'],
+                 :name => 'Sarrick',
                  :password => ENV['ADMIN_PASSWORD'],
                  :password_confirmation => ENV['ADMIN_PASSWORD'],
                  :roles => 'site_admin')

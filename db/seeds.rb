@@ -61,18 +61,15 @@ if ENV['SET_ADMIN_ACCESS']
     admin_user = User.find_by(email: admin_email)
 
     if admin_user
-        # Check if the user already has the 'site_admin' role
-        unless admin_user.roles.include?('site_admin')
-            # Add 'site_admin' role to the user
-            admin_user.roles = 'site_admin'
-            if admin_user.save
-                puts "Admin access granted to the existing user."
-            else
-                puts "Failed to grant admin access: #{admin_user.errors.full_messages.join(", ")}"
-            end
+        admin_user.roles = 'site_admin'
+        if admin_user.save
+            puts "Admin access granted to the existing user."
         else
-            puts "Admin user already exists with site_admin access."
+            puts "Failed to grant admin access: #{admin_user.errors.full_messages.join(", ")}"
         end
+    else
+        puts "Admin user already exists with site_admin access."
+    end
     else
         # Create a new admin user
         admin_user = User.new(email: admin_email, password: admin_password, password_confirmation: admin_password, roles: 'site_admin')

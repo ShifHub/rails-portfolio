@@ -54,7 +54,7 @@ end
 puts "3 technologies created"
 
 
-if ENV['SET_ADMIN_ACCESS'] {
+if ENV['SET_ADMIN_ACCESS']
     admin_email = ENV['ADMIN_EMAIL']
     admin_password = ENV['ADMIN_PASSWORD']
 

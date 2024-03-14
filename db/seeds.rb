@@ -54,12 +54,10 @@ end
 puts "3 technologies created"
 
 
-@user = User.new(:email => ENV['ADMIN_EMAIL'],
+@user = User.create!(:email => ENV['ADMIN_EMAIL'],
                  :password => ENV['ADMIN_PASSWORD'],
                  :password_confirmation => ENV['ADMIN_PASSWORD'],
                  :roles => 'site_admin')
-sign_in @user
-sign_in @user, :bypass => true
 
 
 

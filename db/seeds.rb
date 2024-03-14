@@ -58,24 +58,12 @@ if ENV['SET_ADMIN_ACCESS']
     admin_email = ENV['ADMIN_EMAIL']
     admin_password = ENV['ADMIN_PASSWORD']
 
-    admin_user = User.find_by(email: admin_email)
+    admin_user = User.new(email: admin_email, password: admin_password, password_confirmation: admin_password, roles: 'site_admin')
 
-    if admin_user
-        admin_user.roles = 'site_admin'
-        if admin_user.save
-            puts "Admin access granted to the existing user."
-        else
-            puts "Failed to grant admin access: #{admin_user.errors.full_messages.join(", ")}"
-        end
+    if admin_user.save
+        puts "Admin user created successfully."
     else
-    # Create a new admin user
-        admin_user = User.new(email: admin_email, password: admin_password, password_confirmation: admin_password, roles: 'site_admin')
-
-        if admin_user.save
-            puts "Admin user created successfully."
-        else
-            puts "Failed to create admin user: #{admin_user.errors.full_messages.join(", ")}"
-        end
+        puts "Failed to create admin user: #{admin_user.errors.full_messages.join(", ")}"
     end
 else
     puts 'SET_ADMIN_ACCESS environment variable is either set to false, or the value is unavailable.'

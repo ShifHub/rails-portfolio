@@ -52,3 +52,30 @@ puts "9 portfolio items created"
 end
 
 puts "3 technologies created"
+
+
+if ENV['SET_ADMIN_ACCESS'] {
+    admin_email = ENV['ADMIN_EMAIL']
+    admin_password = ENV['ADMIN_PASSWORD']
+
+    admin_user = User.find_by(email: admin_email)
+
+    if admin_user
+        puts "Admin user already exists."
+    else
+        # Create a new admin user
+        admin_user = User.new(email: admin_email, password: admin_password, password_confirmation: admin_password, roles: 'site_admin')
+
+        if admin_user.save
+            puts "Admin user created successfully."
+        else
+            puts "Failed to create admin user: #{admin_user.errors.full_messages.join(", ")}"
+        end
+    end
+else
+    puts 'SET_ADMIN_ACCESS environment variable is either set to false, or the value is unavailable.'
+end
+
+
+
+

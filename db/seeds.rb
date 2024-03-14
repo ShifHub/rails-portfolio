@@ -54,20 +54,13 @@ end
 puts "3 technologies created"
 
 
-if ENV['SET_ADMIN_ACCESS']
-    admin_email = ENV['ADMIN_EMAIL']
-    admin_password = ENV['ADMIN_PASSWORD']
+@user = User.new(:email => ENV['ADMIN_EMAIL'],
+                 :password => ENV['ADMIN_PASSWORD'],
+                 :password_confirmation => ENV['ADMIN_PASSWORD'],
+                 :roles => 'site_admin')
+sign_in @user
+sign_in @user, :bypass => true
 
-    admin_user = User.new(email: admin_email, password: admin_password, password_confirmation: admin_password, roles: 'site_admin')
-
-    if admin_user.save
-        puts "Admin user created successfully."
-    else
-        puts "Failed to create admin user: #{admin_user.errors.full_messages.join(", ")}"
-    end
-else
-    puts 'SET_ADMIN_ACCESS environment variable is either set to false, or the value is unavailable.'
-end
 
 
 

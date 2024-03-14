@@ -68,10 +68,7 @@ if ENV['SET_ADMIN_ACCESS']
             puts "Failed to grant admin access: #{admin_user.errors.full_messages.join(", ")}"
         end
     else
-        puts "Admin user already exists with site_admin access."
-    end
-    else
-        # Create a new admin user
+    # Create a new admin user
         admin_user = User.new(email: admin_email, password: admin_password, password_confirmation: admin_password, roles: 'site_admin')
 
         if admin_user.save

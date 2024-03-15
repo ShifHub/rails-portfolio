@@ -1,4 +1,4 @@
-if ENV['SEEDING_NECESSARY']
+if ENV['SEEDING_NECESSARY'] == 'true'
     3.times do |topic|
         Topic.create!(
             title: "Topic #{topic}"
@@ -60,6 +60,7 @@ if ENV['SEEDING_NECESSARY']
                          :password => ENV['ADMIN_PASSWORD'],
                          :password_confirmation => ENV['ADMIN_PASSWORD'],
                          :roles => 'site_admin')
+
 end
 
 

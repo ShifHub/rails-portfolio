@@ -1,7 +1,7 @@
 databases:
   - name: sarricks_portfolio
     databaseName: sarricks_portfolio_hbyh
-    user: sarricks_portfolio
+    user: sarricks_portfolio_user
     plan: free
 
 services:

@@ -82,6 +82,6 @@ test:
 production:
   <<: *default
   url: <%= ENV["DATABASE_URL"] %>
-  database: sarricks_portfolio_fyz3
-  username: sarricks_portfolio_user
+  database: sarricks_portfolio_hbyh
+  username: sarricks_portfolio
   password: <%= ENV["SARRICKS_PORTFOLIO_DATABASE_PASSWORD"] %>

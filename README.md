@@ -51,15 +51,15 @@ This portfolio is designed to provide visitors with a comprehensive overview of 
   - Notifications: Gritter (gem: `gritter`)
   - Performance Optimization: Bootsnap (gem: `bootsnap`)
 
-## Screenshots
+## Live Examples
 ### Home Page
-![Home Page](path_to_screenshot1)
+![Home Page](Sarrick.org)
 
 ### Projects Section
-![Projects Section](path_to_screenshot2)
+![Projects Section](Sarrick.org/portfolios)
 
 ### Blog Section
-![Blog Section](path_to_screenshot3)
+![Blog Section](Sarrick.org/blogs)
 
 ## Contact
 Feel free to reach out to me for any inquiries or collaboration opportunities.

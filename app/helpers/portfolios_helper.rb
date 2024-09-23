@@ -13,4 +13,8 @@ module PortfoliosHelper
             image_generator(height: 600, width: 400)
         end
     end
+
+    def linkify_subtitle(subtitle)
+        sanitize(auto_link(subtitle, :all)).html_safe
+    end
 end

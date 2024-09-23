@@ -15,6 +15,12 @@ module PortfoliosHelper
     end
 
     def linkify_subtitle(subtitle)
-        sanitize(auto_link(subtitle, :all)).html_safe
+        sanitized_subtitle = sanitize(subtitle)
+
+        url_regex = /(https?:\/\/[^\s]+)/
+
+        sanitized_subtitle.gsub(url_regex) do |url|
+            link_to(url, url, target: "_blank")
+        end.html_safe
     end
 end

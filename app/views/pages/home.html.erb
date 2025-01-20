@@ -1,7 +1,9 @@
 <main class="main">
-  <h1 class="cover-heading">Welcome.</h1>
-  <p class="lead">I'm thrilled to have you here. Whether you're a fellow coder, or just someone curious about what I do, you're in the right place. Dive into my projects, explore my journey, and feel free to reach out. Let's create something amazing together!</p>
-  <p class="lead">
-  <%= link_to "About Me", about_me_path, class: "btn btn-lg btn-secondary" %>
-  </p>
+    <h1 class="cover-heading">Welcome.</h1>
+    <p class="lead">I'm thrilled to have you here! If you want to get to know who I am, press the about me! If you'd like to get right into seeing my work hit the projects button.</p>
+
+    <p class="lead">
+        <%= link_to "About Me", about_me_path, class: "btn btn-lg btn-secondary" %>
+        <%= link_to "Projects", portfolios_path, class: "btn btn-lg btn-secondary" %>
+    </p>
 </main>
